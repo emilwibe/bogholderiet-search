@@ -19,6 +19,13 @@ require_once( plugin_dir_path( __FILE__ ) . 'dashboard-widget-beers.php' );
 
 //ENQUEUE PLUGIN STYLES
 add_action( 'wp_enqueue_scripts', function(){
-	wp_enqueue_style( 'ew-add-search', plugin_dir_url( __FILE__ ) . 'style.css', [], time() );
-    wp_enqueue_script( 'ew-add-search', plugin_dir_url( __FILE__ ) . 'ew-scripts.js', [], time(), true );
+
+    if( is_user_logged_in() ) {
+        wp_enqueue_style( 'ew-add-search', plugin_dir_url( __FILE__ ) . 'style.css', [], time() );
+        wp_enqueue_script( 'ew-add-search', plugin_dir_url( __FILE__ ) . 'ew-scripts.js', [], time(), true );
+    } else {
+        wp_enqueue_style( 'ew-add-search', plugin_dir_url( __FILE__ ) . 'style.css', [], );
+    wp_enqueue_script( 'ew-add-search', plugin_dir_url( __FILE__ ) . 'ew-scripts.js', [], true );
+    }
+	
 });
