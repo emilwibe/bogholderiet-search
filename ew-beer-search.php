@@ -13,6 +13,10 @@ require_once( plugin_dir_path( __FILE__ ) . 'shortcodes/ew-show-beers.php' );
 // SHOW TAX
 require_once( plugin_dir_path( __FILE__ ) . 'shortcodes/ew-show-data.php' );
 
+// DASHBOARD WIDGET
+require_once( plugin_dir_path( __FILE__ ) . 'dashboard-widget-beers.php' );
+
+
 //ENQUEUE PLUGIN STYLES
 add_action( 'wp_enqueue_scripts', function(){
 	wp_enqueue_style( 'ew-add-search', plugin_dir_url( __FILE__ ) . 'style.css', [], time() );

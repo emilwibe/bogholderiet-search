@@ -48,56 +48,40 @@ function ew_show_beers() {
 
         $output .= '<select name="beer-type" id="ew-filter-type">';
 
-        if( !isset( $_GET['beer-type'] ) ) {
-            $output .= '<option value="" disabled selected>Øltype</option>';
-        }
+        $output .= '<option value="" disabled selected>Øltype</option>';
+        
 
         foreach ($ew_type_arr as $key => $val) {
 
-            if( isset( $_GET['beer-type'] ) && $_GET['beer-type'] == $key ) {
-                $output .= '<option value="' . $key . '" selected>' . $val . '</option>';
-            } else {
-                $output .= '<option value="' . $key . '" >' . $val . '</option>';
-            }
+            $output .= '<option value="' . $key . '" >' . $val . '</option>';
+            
         }
 
         $output .= '</select>';
 
         $output .= '<select name="brewery" id="ew-filter-type-brewery">';
 
-        if( !isset( $_GET['brewery'] ) ) {
-            $output .= '<option value="" disabled selected>Bryggeri</option>';
-        }
+        $output .= '<option value="" disabled selected>Bryggeri</option>';
 
         foreach ($ew_brewery_arr as $key => $val) {
 
-            if( isset( $_GET['brewery'] ) && $_GET['brewery'] == $key ) {
-                $output .= '<option value="' . $key . '" selected>' . $val . '</option>';
-            } else {
-                $output .= '<option value="' . $key . '" >' . $val . '</option>';
-            }
+            $output .= '<option value="' . $key . '" >' . $val . '</option>';
+
         }
 
         $output .= '</select>';
 
         $output .= '<select name="beer-country" id="ew-filter-type-country">';
 
-        if( !isset( $_GET['beer-country'] ) ) {
-            $output .= '<option value="" disabled selected>Land</option>';
-        }
+        $output .= '<option value="" disabled selected>Land</option>';
 
         foreach ($ew_country_arr as $key => $val) {
 
-            if( isset( $_GET['beer-country'] ) && $_GET['beer-country'] == $key ) {
-                $output .= '<option value="' . $key . '" selected>' . $val . '</option>';
-            } else {
-                $output .= '<option value="' . $key . '" >' . $val . '</option>';
-            }
+            $output .= '<option value="' . $key . '" >' . $val . '</option>';
+
         }
 
         $output .= '</select>';
-
-        $output .= '<a href="https://bogholderiet.ewl.dk/ol-menu/">Ryd</a>';
 
         $output .= '</form>';
 
