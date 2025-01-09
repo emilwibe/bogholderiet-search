@@ -46,7 +46,7 @@ function ew_show_beers() {
     // OUTPUT FORM
     $output .= '<form action="#ew-filter-type" method="get" class="ew-beer-filter">';
 
-        $output .= '<select name="beer-type" id="ew-filter-type">';
+        $output .= '<select name="beer-type" id="ew-filter-type" onchange="this.form.submit()">';
 
         $output .= '<option value="" disabled selected>Øltype</option>';
         
@@ -59,7 +59,7 @@ function ew_show_beers() {
 
         $output .= '</select>';
 
-        $output .= '<select name="brewery" id="ew-filter-type-brewery">';
+        $output .= '<select name="brewery" id="ew-filter-type-brewery" onchange="this.form.submit()">';
 
         $output .= '<option value="" disabled selected>Bryggeri</option>';
 
@@ -71,7 +71,7 @@ function ew_show_beers() {
 
         $output .= '</select>';
 
-        $output .= '<select name="beer-country" id="ew-filter-type-country">';
+        $output .= '<select name="beer-country" id="ew-filter-type-country" onchange="this.form.submit()">';
 
         $output .= '<option value="" disabled selected>Land</option>';
 
