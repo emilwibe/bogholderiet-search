@@ -26,8 +26,25 @@ function ew_dashboard_beer_info() {
     echo "<li>Antal øl: $the_query->found_posts</li>";
 
     echo "<li>Antal fadøl: 22</li>";
+    
+    //var_dump($the_query->found_posts);
+    
+    $ew_found_posts = $the_query->found_posts;
+    
+    $total_beer = 0;
+    
+    $total_beer = $ew_found_posts + 22;
+    
+    echo "<li><strong>Total: ";
+    
+    echo $total_beer;
+    
+    echo "</strong></li>";
+    
+    
+    //var_dump($total_beer);
 
-    echo "<li><strong>Total:" . $the_query->found_posts + 22 . "</strong></li>";
+    //echo "<li><strong>Total:" . $the_query->found_posts + 22 . "</strong></li>";
 
     echo '</ul>';
 }
