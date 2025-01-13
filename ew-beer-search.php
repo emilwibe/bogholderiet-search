@@ -16,6 +16,8 @@ require_once( plugin_dir_path( __FILE__ ) . 'shortcodes/ew-show-data.php' );
 // DASHBOARD WIDGET
 require_once( plugin_dir_path( __FILE__ ) . 'dashboard-widget-beers.php' );
 
+// SOLD OUT BTN
+require_once( plugin_dir_path( __FILE__ ) . 'shortcodes/ew-sold-out-btn.php' );
 
 //ENQUEUE PLUGIN STYLES
 add_action( 'wp_enqueue_scripts', function(){

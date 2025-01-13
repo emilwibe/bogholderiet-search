@@ -166,7 +166,8 @@ function ew_show_beers() {
 
             if( isset( $beer_type[1] ) && $beer_type[1]->parent != 0 ) {
                 $beer_type_string = $beer_type[1]->name;
-            } else {
+                
+            } elseif ( isset( $beer_type[0]->name ) ) {
                 $beer_type_string = $beer_type[0]->name;
             }
 
