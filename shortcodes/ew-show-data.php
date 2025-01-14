@@ -6,7 +6,7 @@ function ew_show_brewery () {
     $ew_brewery_string = "";
     $ew_brewery_terms = get_the_terms(get_the_ID(), 'beer_brewery');
 
-    if( isset( $ew_brewery_terms ) ) {
+    if( isset( $ew_brewery_terms ) && is_array( $ew_brewery_terms )) {
         foreach ( $ew_brewery_terms as $brewery ) {
             $ew_brewery_string .= $brewery->name;
         }
