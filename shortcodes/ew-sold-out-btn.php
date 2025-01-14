@@ -14,11 +14,11 @@ function ew_sold_out_btn() {
         update_field( 'ew_sold_out', array("true"), $ew_beer_ID );
     }
 
-    var_dump($ew_qv_get_sold_out);
+    //var_dump($ew_qv_get_sold_out);
 
     $ew_field_sold_out = get_field('ew_sold_out');
 
-    var_dump($ew_field_sold_out);
+    //var_dump($ew_field_sold_out);
     
     if( is_user_logged_in() ) {
 
