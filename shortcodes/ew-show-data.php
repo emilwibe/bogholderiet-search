@@ -22,7 +22,7 @@ function ew_show_country () {
     $ew_country_string = "";
     $ew_country_terms = get_the_terms(get_the_ID(), 'beer_country');
 
-    if( isset( $ew_country_terms ) ) {
+    if( isset( $ew_country_terms ) && is_array( $ew_country_terms ) ) {
         foreach ( $ew_country_terms as $country ) {
             $ew_country_string .= $country->name;
         }
