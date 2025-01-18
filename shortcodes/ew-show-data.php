@@ -70,7 +70,7 @@ function ew_cf_size () {
         $ew_size = get_field( 'storrelse' );
     }
 
-    return "Størrelse: " . $ew_size . "cl";
+    return "Størrelse: " . $ew_size . "ml";
 }
 
 add_shortcode( 'ew_single_size', 'ew_cf_size' );

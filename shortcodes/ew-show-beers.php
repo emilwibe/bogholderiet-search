@@ -175,7 +175,7 @@ function ew_show_beers() {
 
             $output .= 'Alkoholstyrke: ' . get_field( 'alkohol' ) . '&percnt;<br>';
 
-            $output .= 'Størrelse: ' . get_field( 'storrelse' ) . 'cl<br>';
+            $output .= 'Størrelse: ' . get_field( 'storrelse' ) . 'ml<br>';
 
             $output .= 'Pris: ' . get_field( 'pris' ) . ' kr.</p>';
 
