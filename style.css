@@ -80,4 +80,9 @@ img.ew-no-img {
     background-color: red;
     text-align: center;
     width: calc(100% - 20px);
+    height: 5em;
+}
+
+.ew-beer-sold-out h1 {
+    position: relative;
 }
