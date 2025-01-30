@@ -41,8 +41,10 @@
 }
 .ew-beer {
     background-color: #410105;
-    position: relative;
     padding: 10px;
+}
+.ew-beer a {
+    position: relative;
 }
 .ew-beer img {
     width: 100%;
