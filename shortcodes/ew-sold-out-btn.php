@@ -22,15 +22,24 @@ function ew_sold_out_btn() {
     
     if( is_user_logged_in() ) {
 
+        if ($ew_field_sold_out == true) {
+            $output .= '<p class="ew-beer-button soldout">Udsolgt</p>';
+        } else {
+            $output .= '<p class="ew-beer-button instock">På lager</p>';
+        }
 
+        /*
         if( count( $ew_field_sold_out ) == 0 || !isset($ew_qv_get_sold_out)) {
             $output = '<a style="background-color: lightgrey; color: #333; padding: 10px;" href="' . get_the_permalink() . '?set_sold_out=' . $ew_beer_ID . '" class="">Meld udsolgt</a>';
         }
+        */
     }
 
+    /*
     if( count( $ew_field_sold_out ) != 0 ) {
         $output .= '<span style="background-color: red; color: #fff; padding: 10px;">Udsolgt</span>';
     }
+    */
 
     /*if( is_user_logged_in() ) {
         $output .= '<a class="btn-sold-out" href="?beer_sold_out=">Meld udsolgt</a>';
