@@ -79,5 +79,5 @@ img.ew-no-img {
     top: 0;
     background-color: red;
     text-align: center;
-    width: 100%;
+    width: calc(100% - 20px);
 }
