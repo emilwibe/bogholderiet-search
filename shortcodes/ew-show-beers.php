@@ -153,8 +153,12 @@ function ew_show_beers() {
                 $output .= '<img src="' . plugin_dir_url( __FILE__ ) . '../assets/bogholderiet-placeholder-beer.png?new2" class="ew-no-img">';
             }
 
-            if (get_field('ew_sold_out') == true) {
-                $output .= "UDSOLGT DIN SPASSER";
+            if ( get_field( 'ew_sold_out' ) == true ) {
+                $output .= '<div class="ew-beer-sold-out">';
+
+                $output .= '<h1>UDSOLGT</h1>';
+
+                $output .= '</div>';
             }
 
             $output .= '</a>';
@@ -167,7 +171,6 @@ function ew_show_beers() {
             if( isset( $beer_country ) ) {
                 $output .= '<p>Land: ' . $beer_country[0]->name . '<br>';
             }
-            
 
             // OUTPUT BEER TYPE FROM CAT
             $beer_type = get_the_terms(get_the_ID(), 'category');
