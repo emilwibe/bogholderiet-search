@@ -169,6 +169,7 @@ function ew_show_beers() {
             $beer_country = get_the_terms(get_the_ID(), 'beer_country');
             
             if( isset( $beer_country ) ) {
+                print_r($beer_country);
                 if ($beer_country[0]) {
                     $output .= '<p>Land: ' . $beer_country[0]->name . '<br>';
                 }
