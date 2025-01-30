@@ -96,6 +96,13 @@ function ew_show_beers() {
         'meta_value' => false
     );
 
+    if (is_user_logged_in()) {
+        unset($args[5]);
+        unset($args[6]);
+
+        $args = array_values($args);
+    }
+
     // FILTER BEER TYPE IN WP_QUERY
     if( isset( $_GET['beer-type'] ) && $_GET['beer-type'] != 'all' ) {
 
@@ -170,7 +177,7 @@ function ew_show_beers() {
             } elseif ( isset( $beer_type[0]->name ) ) {
                 $beer_type_string = $beer_type[0]->name;
             }
-            var_dump(get_field('ew_sold_out'));
+            
             $output .= 'Type: ' . $beer_type_string . '<br>';
 
             $output .= 'Alkoholstyrke: ' . get_field( 'alkohol' ) . '&percnt;<br>';
