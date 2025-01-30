@@ -102,3 +102,9 @@ img.ew-no-img {
     background-color: limegreen;
     color: #fff;
 }
+
+.ew-beer-button {
+    background-color: lightgrey;
+    color: #333;
+    padding: 10px;
+}
