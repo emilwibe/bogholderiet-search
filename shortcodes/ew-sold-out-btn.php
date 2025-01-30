@@ -24,7 +24,7 @@ function ew_sold_out_btn() {
 
         if ($ew_field_sold_out == true) {
             $output .= '<span class="ew-beer-status soldout">Udsolgt</span>';
-            $output .= '<a class="ew-beer-button" href="' . get_the_permalink() . '?set_in_stock=' . $ew_beer_ID . '">Meld på lager</a>';
+            $output .= '<a class="ew-beer-button" href="' . get_the_permalink() . '?set_in_stock=' . $ew_beer_ID . '">Meld udsolgt</a>';
         } else {
             $output .= '<span class="ew-beer-status instock">På lager</span>';
             $output .= '<a class="ew-beer-button" href="' . get_the_permalink() . '?set_sold_out=' . $ew_beer_ID . '">Meld på lager</a>';
