@@ -170,7 +170,7 @@ function ew_show_beers() {
             
             if( isset( $beer_country ) ) {
                 print_r($beer_country);
-                if ($beer_country[0]) {
+                if (isset($beer_country[0])) {
                     $output .= '<p>Land: ' . $beer_country[0]->name . '<br>';
                 }
             }
