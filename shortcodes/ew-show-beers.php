@@ -170,7 +170,7 @@ function ew_show_beers() {
             } elseif ( isset( $beer_type[0]->name ) ) {
                 $beer_type_string = $beer_type[0]->name;
             }
-
+            $output .= get_field('ew_sold_out');
             $output .= 'Type: ' . $beer_type_string . '<br>';
 
             $output .= 'Alkoholstyrke: ' . get_field( 'alkohol' ) . '&percnt;<br>';
