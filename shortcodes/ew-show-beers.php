@@ -153,6 +153,10 @@ function ew_show_beers() {
                 $output .= '<img src="' . plugin_dir_url( __FILE__ ) . '../assets/bogholderiet-placeholder-beer.png?new2" class="ew-no-img">';
             }
 
+            if (get_field('ew_sold_out')[0] == 'Udsolgt') {
+                $output .= "UDSOLGT DIN SPASSER";
+            }
+
             $output .= '</a>';
 
             $output .= '<h3 class="ew-beer-title"><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h3>';
