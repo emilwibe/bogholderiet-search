@@ -23,9 +23,9 @@ function ew_sold_out_btn() {
     if( is_user_logged_in() ) {
 
         if ($ew_field_sold_out == true) {
-            $output .= '<p class="ew-beer-button soldout">Udsolgt</p>';
+            $output .= '<span class="ew-beer-button soldout">Udsolgt</span>';
         } else {
-            $output .= '<p class="ew-beer-button instock">På lager</p>';
+            $output .= '<span class="ew-beer-button instock">På lager</span>';
         }
 
         /*
