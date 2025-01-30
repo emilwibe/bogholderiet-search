@@ -88,17 +88,17 @@ img.ew-no-img {
     margin: 0;
 }
 
-.ew-beer-button {
+.ew-beer-status {
     width: auto;
     padding: 10px;
 }
 
-.ew-beer-button.soldout {
+.ew-beer-status.soldout {
     background-color: red;
     color: #fff;
 }
 
-.ew-beer-button.instock {
+.ew-beer-status.instock {
     background-color: limegreen;
     color: #fff;
 }
