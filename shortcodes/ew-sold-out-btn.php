@@ -9,7 +9,12 @@ function ew_sold_out_btn() {
     
     if( is_user_logged_in() ) {
         if ( isset($_GET['set_sold_out']) ) {
+            update_field('ew_sold_out', array(true), $ew_beer_ID);
             $output .= '<p>this is a thing</p>';
+
+        } elseif ( isset($_GET['set_in_stock']) ) {
+            update_field('ew_sold_out', array(false), $ew_beer_ID);
+            $output .= '<p>this is also a thing</p>';
         }
 
         if ($ew_field_sold_out == true) {
