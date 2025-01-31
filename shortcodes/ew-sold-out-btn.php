@@ -8,6 +8,10 @@ function ew_sold_out_btn() {
     $ew_field_sold_out = get_field('ew_sold_out');
     
     if( is_user_logged_in() ) {
+        if ( isset($_GET['set_in_stock']) ) {
+            $output .= 'this is athing';
+        }
+
         if ($ew_field_sold_out == true) {
             $output .= '<span class="ew-beer-status soldout">Udsolgt</span>';
             $output .= '<a class="ew-beer-button" href="' . get_the_permalink() . '?set_in_stock=' . $ew_beer_ID . '">Meld på lager</a>';
