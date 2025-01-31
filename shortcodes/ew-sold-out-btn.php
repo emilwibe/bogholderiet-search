@@ -18,10 +18,10 @@ function ew_sold_out_btn() {
         }
 
         if ( isset($_GET['set_sold_out']) ) {
-            update_field('ew_sold_out', array(true), $ew_beer_ID);
+            update_field('ew_sold_out', array("true"), $ew_beer_ID);
 
         } elseif ( isset($_GET['set_in_stock']) ) {
-            update_field('ew_sold_out', array(false), $ew_beer_ID);
+            update_field('ew_sold_out', array("false"), $ew_beer_ID);
         }
     }
 
