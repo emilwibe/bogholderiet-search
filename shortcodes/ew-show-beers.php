@@ -173,7 +173,7 @@ function ew_show_beers() {
             }
 
             if ( get_field( 'ew_sold_out' ) ) {
-                var_dump(get_field('ew_sold_out'));
+                print_r(get_field('ew_sold_out'));
                 $output .= '<div class="ew-beer-sold-out">';
 
                 $output .= '<h1>UDSOLGT</h1>';
