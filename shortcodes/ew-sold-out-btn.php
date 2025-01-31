@@ -10,7 +10,7 @@ function ew_sold_out_btn() {
             update_field('ew_sold_out', ['true'], $ew_beer_ID);
 
         } elseif ( isset($_GET['set_in_stock']) ) {
-            update_field('ew_sold_out', ['false'], $ew_beer_ID);
+            update_field('ew_sold_out', [], $ew_beer_ID);
         }
 
         if ( get_field('ew_sold_out') ) {
