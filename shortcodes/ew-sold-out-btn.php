@@ -8,8 +8,8 @@ function ew_sold_out_btn() {
     $ew_field_sold_out = get_field('ew_sold_out');
     
     if( is_user_logged_in() ) {
-        if ( isset($_GET['set_in_stock']) ) {
-            $output .= 'this is athing';
+        if ( isset($_GET['set_sold_out']) ) {
+            $output .= '<p>this is a thing</p>';
         }
 
         if ($ew_field_sold_out == true) {
