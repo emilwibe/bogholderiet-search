@@ -88,7 +88,7 @@ function ew_show_beers() {
         if ( is_user_logged_in() ) {
             $output .= '<select name="sort" id="ew-filter-type-soldout" onchange="this.form.submit()">';
 
-            $output .= '<option value="all" selected disabled>Sorter</option>';
+            $output .= '<option value="all" disabled selected>Sorter</option>';
             $output .= '<option value="all">Alle</option>';
             $output .= '<option value="soldout">Udsolgte</option>';
     
@@ -109,7 +109,7 @@ function ew_show_beers() {
     );
 
     if ( is_user_logged_in() ) {
-        if ( isset($_GET['sort']) ) {
+        if ( isset($_GET['sort']) && $_GET['sort'] == 'Udsolgte' ) {
             $args['meta_value'] = true;
         } else {
             unset($args['meta_key']);
