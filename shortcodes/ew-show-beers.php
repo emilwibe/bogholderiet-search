@@ -109,15 +109,8 @@ function ew_show_beers() {
     );
 
     if ( is_user_logged_in() ) {
-        if ( isset($_GET['sort']) ) {
-            $args['meta_key'] = 'ew_sold_out';
-            $args['meta_value'] = ["1"];
-        } else {
-            unset($args['meta_key']);
-            unset($args['meta_value']);
-        }
-
-        var_dump($args);
+        unset($args['meta_key']);
+        unset($args['meta_value']);
     }
 
     // FILTER BEER TYPE IN WP_QUERY
@@ -171,7 +164,7 @@ function ew_show_beers() {
             } else {
                 $output .= '<img src="' . plugin_dir_url( __FILE__ ) . '../assets/bogholderiet-placeholder-beer.png?new2" class="ew-no-img">';
             }
-            var_dump(get_field('ew_sold_out'));
+
             if ( get_field( 'ew_sold_out' ) ) {
                 $output .= '<div class="ew-beer-sold-out">';
 
