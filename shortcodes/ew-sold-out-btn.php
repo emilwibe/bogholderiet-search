@@ -12,12 +12,8 @@ function ew_sold_out_btn() {
         } elseif ( isset($_GET['set_in_stock']) ) {
             update_field('ew_sold_out', [], $ew_beer_ID);
         }
-    }
 
-    $ew_field_sold_out = get_field('ew_sold_out');
-
-    if ( is_user_logged_in() ) {
-        //var_dump($ew_field_sold_out);
+        $ew_field_sold_out = get_field('ew_sold_out');
 
         if ( $ew_field_sold_out ) {
             $output .= '<span class="ew-beer-status soldout">Udsolgt</span>';
