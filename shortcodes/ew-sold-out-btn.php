@@ -14,12 +14,13 @@ function ew_sold_out_btn() {
     if( isset($_GET['set_in_stock'] )) {
         $ew_qv_get_in_stock = $_GET['set_in_stock'];
     }
-
+    var_dump($ew_qv_get_in_stock);
+    var_dump($ew_qv_get_sold_out);
     if( is_user_logged_in() ) {
         if ( $ew_qv_get_sold_out ) {
             update_field( 'ew_sold_out', array("true"), $ew_beer_ID );
 
-        } elseif ($ew_qv_get_in_stock) {
+        } elseif ( $ew_qv_get_in_stock ) {
             update_field( 'ew_sold_out', array("false"), $ew_beer_ID );
         }
     }
