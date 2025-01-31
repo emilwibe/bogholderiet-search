@@ -87,7 +87,8 @@ function ew_show_beers() {
 
         $output .= '<select name="beer-soldout" id="ew-filter-type-soldout" onchange="this.form.submit()">';
 
-        $output .= '<option value="all" selected>Alle</option>';
+        $output .= '<option value="all" selected disabled>Sorter</option>';
+        $output .= '<option value="all">Alle</option>';
         $output .= '<option value="soldout">Udsolgte</option>';
 
         $output .= '</select>';
