@@ -85,13 +85,15 @@ function ew_show_beers() {
 
         $output .= '</select>';
 
-        $output .= '<select name="beer-soldout" id="ew-filter-type-soldout" onchange="this.form.submit()">';
+        if ( is_user_logged_in() ) {
+            $output .= '<select name="sort" id="ew-filter-type-soldout" onchange="this.form.submit()">';
 
-        $output .= '<option value="all" selected disabled>Sorter</option>';
-        $output .= '<option value="all">Alle</option>';
-        $output .= '<option value="soldout">Udsolgte</option>';
-
-        $output .= '</select>';
+            $output .= '<option value="all" selected disabled>Sorter</option>';
+            $output .= '<option value="all">Alle</option>';
+            $output .= '<option value="soldout">Udsolgte</option>';
+    
+            $output .= '</select>';
+        }
 
         $output .= '</form>';
 
