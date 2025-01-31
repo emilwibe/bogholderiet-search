@@ -4,26 +4,6 @@ if (!defined('ABSPATH')) { exit; }
 function ew_sold_out_btn() {
     $output = '';
     $ew_beer_ID = get_the_ID();
-    $ew_qv_get_sold_out = 0;
-    $ew_qv_get_in_stock = 0;
-
-    if( isset($_GET['set_sold_out'] )) {
-        $ew_qv_get_sold_out = $_GET['set_sold_out'];
-    }
-
-    if( isset($_GET['set_in_stock'] )) {
-        $ew_qv_get_in_stock = $_GET['set_in_stock'];
-    }
-    var_dump($ew_qv_get_in_stock);
-    var_dump($ew_qv_get_sold_out);
-    if( is_user_logged_in() ) {
-        if ( $ew_qv_get_sold_out ) {
-            update_field( 'ew_sold_out', array("true"), $ew_beer_ID );
-
-        } elseif ( $ew_qv_get_in_stock ) {
-            update_field( 'ew_sold_out', array("false"), $ew_beer_ID );
-        }
-    }
 
     $ew_field_sold_out = get_field('ew_sold_out');
     
@@ -41,6 +21,28 @@ function ew_sold_out_btn() {
 }
 
 add_shortcode( 'ew_sell_out_btn', 'ew_sold_out_btn' );
+
+/*
+    $ew_qv_get_sold_out = 0;
+    $ew_qv_get_in_stock = 0;
+
+    if( isset($_GET['set_sold_out'] )) {
+        $ew_qv_get_sold_out = $_GET['set_sold_out'];
+    }
+
+    if( isset($_GET['set_in_stock'] )) {
+        $ew_qv_get_in_stock = $_GET['set_in_stock'];
+    }
+
+    if( is_user_logged_in() ) {
+        if ( $ew_qv_get_sold_out ) {
+            update_field( 'ew_sold_out', array("true"), $ew_beer_ID );
+
+        } elseif ( $ew_qv_get_in_stock ) {
+            update_field( 'ew_sold_out', array("false"), $ew_beer_ID );
+        }
+    }
+*/
 
 /*
 if( count( $ew_field_sold_out ) == 0 || !isset($ew_qv_get_sold_out)) {
