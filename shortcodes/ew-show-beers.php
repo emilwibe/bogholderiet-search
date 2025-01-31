@@ -113,7 +113,10 @@ function ew_show_beers() {
         unset($args['meta_value']);
 
         if ( isset($_GET['sort']) ) {
+            $args['meta_key'] = 'ew_sold_out';
             $args['meta_value'] = true;
+
+            var_dump($args);
         }
     }
 
