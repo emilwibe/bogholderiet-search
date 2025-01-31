@@ -105,13 +105,13 @@ function ew_show_beers() {
             'relation' => 'AND'
         ),
         'meta_key' => 'ew_sold_out',
-        'meta_value' => []
+        'meta_value' => false
     );
 
     if ( is_user_logged_in() ) {
         if ( isset($_GET['sort']) ) {
             $args['meta_key'] = 'ew_sold_out';
-            $args['meta_value'] = [true];
+            $args['meta_value'] = ["1"];
         } else {
             unset($args['meta_key']);
             unset($args['meta_value']);
