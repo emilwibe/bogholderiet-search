@@ -5,8 +5,6 @@ function ew_sold_out_btn() {
     $output = '';
     $ew_beer_ID = get_the_ID();
 
-    $ew_field_sold_out = get_field('ew_sold_out');
-    
     if ( is_user_logged_in() ) {
         if ( isset($_GET['set_sold_out']) ) {
             update_field('ew_sold_out', [true], $ew_beer_ID);
@@ -15,6 +13,8 @@ function ew_sold_out_btn() {
             update_field('ew_sold_out', [], $ew_beer_ID);
         }
     }
+
+    $ew_field_sold_out = get_field('ew_sold_out');
 
     if ( is_user_logged_in() ) {
         var_dump($ew_field_sold_out);
