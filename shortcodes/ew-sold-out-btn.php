@@ -8,6 +8,7 @@ function ew_sold_out_btn() {
     $ew_field_sold_out = get_field('ew_sold_out');
     
     if( is_user_logged_in() ) {
+        var_dump($ew_field_sold_out);
         if ($ew_field_sold_out == true) {
             $output .= '<span class="ew-beer-status soldout">Udsolgt</span>';
             $output .= '<a class="ew-beer-button" href="' . get_the_permalink() . '?set_in_stock=' . $ew_beer_ID . '">Meld på lager</a>';
@@ -20,7 +21,7 @@ function ew_sold_out_btn() {
             update_field('ew_sold_out', array(true), $ew_beer_ID);
 
         } elseif ( isset($_GET['set_in_stock']) ) {
-            update_field('ew_sold_out', array("Udsolgt"), $ew_beer_ID);
+            update_field('ew_sold_out', array(false), $ew_beer_ID);
         }
     }
 
