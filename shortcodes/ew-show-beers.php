@@ -109,15 +109,15 @@ function ew_show_beers() {
     );
 
     if ( is_user_logged_in() ) {
-        unset($args['meta_key']);
-        unset($args['meta_value']);
-
         if ( isset($_GET['sort']) ) {
             $args['meta_key'] = 'ew_sold_out';
-            $args['meta_value'] = [true];
-
-            var_dump($args);
+            $args['meta_value'] = true;
+        } else {
+            unset($args['meta_key']);
+            unset($args['meta_value']);
         }
+
+        var_dump($args);
     }
 
     // FILTER BEER TYPE IN WP_QUERY
