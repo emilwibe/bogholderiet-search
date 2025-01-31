@@ -17,7 +17,7 @@ function ew_sold_out_btn() {
     $ew_field_sold_out = get_field('ew_sold_out');
 
     if ( is_user_logged_in() ) {
-        var_dump($ew_field_sold_out);
+        //var_dump($ew_field_sold_out);
 
         if ( $ew_field_sold_out ) {
             $output .= '<span class="ew-beer-status soldout">Udsolgt</span>';
