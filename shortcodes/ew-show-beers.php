@@ -171,7 +171,7 @@ function ew_show_beers() {
             } else {
                 $output .= '<img src="' . plugin_dir_url( __FILE__ ) . '../assets/bogholderiet-placeholder-beer.png?new2" class="ew-no-img">';
             }
-
+            $output .= get_field('ew_sold_out');
             if ( get_field( 'ew_sold_out' ) ) {
                 $output .= '<div class="ew-beer-sold-out">';
 
