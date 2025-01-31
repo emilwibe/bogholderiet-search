@@ -108,9 +108,13 @@ function ew_show_beers() {
         'meta_value' => false
     );
 
-    if (is_user_logged_in()) {
+    if ( is_user_logged_in() ) {
         unset($args['meta_key']);
         unset($args['meta_value']);
+
+        if ( isset($_GET['sort']) ) {
+            $args['meta_value'] = true;
+        }
     }
 
     // FILTER BEER TYPE IN WP_QUERY
