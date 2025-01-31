@@ -110,7 +110,7 @@ function ew_show_beers() {
 
     if ( is_user_logged_in() ) {
         if ( isset($_GET['sort']) ) {
-            $args['meta_value'] = 'true';
+            $args['meta_value'] = true;
         } else {
             unset($args['meta_key']);
             unset($args['meta_value']);
