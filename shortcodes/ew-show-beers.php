@@ -162,7 +162,8 @@ function ew_show_beers() {
             $output .= '<a href="' . get_the_permalink() . '">';
 
             if ( has_post_thumbnail( ) ) {
-                $output .= get_the_post_thumbnail( $post, 'small');
+                //$output .= get_the_post_thumbnail( $post, 'small');
+                $output .= '<img src="' . get_the_post_thumbnail_url($post, 'small') . '" class="zoooom">';
             } else {
                 $output .= '<img src="' . plugin_dir_url( __FILE__ ) . '../assets/bogholderiet-placeholder-beer.png?new2" class="ew-no-img">';
             }
