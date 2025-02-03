@@ -112,3 +112,5 @@ function ew_cf_read_more() {
 
     return $ew_read_more;
 }
+
+add_shortcode( 'ew_read_more', 'ew_cf_read_more' );
