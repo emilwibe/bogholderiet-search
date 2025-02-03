@@ -107,19 +107,6 @@ function ew_show_beers() {
         'meta_key' => 'ew_sold_out',
         'meta_value' => false
     );
-
-    /*
-    if ( is_user_logged_in() ) {
-        if ( isset($_GET['sort']) && $_GET['sort'] != 'all' ) {
-            $args['meta_value'] = true;
-        } else {
-            unset($args['meta_key']);
-            unset($args['meta_value']);
-        }
-
-        var_dump($args);
-    }
-    */
     
     if ( is_user_logged_in() ) {
         if ( isset($_GET['sort']) && $_GET['sort'] != 'all' ) {
