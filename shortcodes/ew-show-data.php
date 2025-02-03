@@ -103,7 +103,7 @@ function ew_cf_inv () {
 add_shortcode( 'ew_single_inv', 'ew_cf_inv' );
 
 // READ MORE
-function ew_cf_read_more() {
+function ew_sc_read_more() {
     $ew_read_more = '';
 
     if ( get_field('laes_mere') ) {
@@ -113,4 +113,4 @@ function ew_cf_read_more() {
     return $ew_read_more;
 }
 
-add_shortcode( 'ew_read_more', 'ew_cf_read_more' );
+add_shortcode( 'ew_read_more', 'ew_sc_read_more' );
