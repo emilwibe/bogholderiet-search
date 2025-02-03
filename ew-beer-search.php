@@ -31,7 +31,7 @@ add_action( 'wp_enqueue_scripts', function(){
 });
 
 add_filter( 'wp_get_attachment_image_attributes', function($attr) {
-    $attr['class'] .= ' zoooom nocolor preset-color';
+    $attr['class'] .= ' zoooom preset-color';
 
     return $attr;
 });

@@ -111,7 +111,7 @@ img.ew-no-img {
     margin-left: 15px;
 }
 
-.zoooom .preset-color {
+.zoomWindow .preset-color {
     background-color: var(--wp--preset--color--base) !important;
 }
 
