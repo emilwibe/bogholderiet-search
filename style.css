@@ -110,6 +110,6 @@ img.ew-no-img {
     margin-left: 15px;
 }
 
-.zoomContainer {
-    background-color: #410105;
+.zoomWindow {
+    background-color: #410105 !important;
 }
