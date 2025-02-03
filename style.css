@@ -80,7 +80,7 @@ img.ew-no-img {
     background-color: red;
     text-align: center;
     width: calc(100% - 20px);
-    z-index: 1000;
+    z-index: 1000; /* wp image zoom sets zindex to 999 which would hide this */
 }
 
 .ew-beer-sold-out h1 {
