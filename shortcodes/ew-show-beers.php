@@ -91,16 +91,6 @@ function ew_show_beers() {
             } else {
                 $output .= '<a href="' . get_the_permalink() . '?sort=all">Vis alle</a>';
             }
-
-            /*
-            $output .= '<select name="sort" id="ew-filter-type-soldout" onchange="this.form.submit()">';
-
-            $output .= '<option value="all" disabled selected>Sorter</option>';
-            $output .= '<option value="all">Alle</option>';
-            $output .= '<option value="soldout">Udsolgte</option>';
-    
-            $output .= '</select>';
-            */
         }
 
         $output .= '</form>';
