@@ -108,8 +108,9 @@ function ew_show_beers() {
         'meta_value' => false
     );
 
+    /*
     if ( is_user_logged_in() ) {
-        if ( isset($_GET['sort']) ) {
+        if ( isset($_GET['sort']) && $_GET['sort'] != 'all' ) {
             $args['meta_value'] = true;
         } else {
             unset($args['meta_key']);
@@ -117,6 +118,16 @@ function ew_show_beers() {
         }
 
         var_dump($args);
+    }
+    */
+    
+    if ( is_user_logged_in() ) {
+        if ( isset($_GET['sort']) && $_GET['sort'] != 'all' ) {
+            $args['meta_value'] = true;
+        } else {
+            unset($args['meta_key']);
+            unset($args['meta_value']);
+        }
     }
 
     // FILTER BEER TYPE IN WP_QUERY
