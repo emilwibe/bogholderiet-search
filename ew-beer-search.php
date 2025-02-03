@@ -21,7 +21,6 @@ require_once( plugin_dir_path( __FILE__ ) . 'shortcodes/ew-sold-out-btn.php' );
 
 //ENQUEUE PLUGIN STYLES
 add_action( 'wp_enqueue_scripts', function(){
-
     if( is_user_logged_in() ) {
         wp_enqueue_style( 'ew-add-search', plugin_dir_url( __FILE__ ) . 'style.css', [], time() );
         wp_enqueue_script( 'ew-add-search', plugin_dir_url( __FILE__ ) . 'ew-scripts.js', [], time(), true );
@@ -29,5 +28,10 @@ add_action( 'wp_enqueue_scripts', function(){
         wp_enqueue_style( 'ew-add-search', plugin_dir_url( __FILE__ ) . 'style.css', [], );
     wp_enqueue_script( 'ew-add-search', plugin_dir_url( __FILE__ ) . 'ew-scripts.js', [], true );
     }
-	
+});
+
+add_filter( 'wp_get_attachment_image_attributes', function($attr) {
+    $attr['class'] .= ' zoooom';
+
+    return $attr;
 });
