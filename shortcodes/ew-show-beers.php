@@ -86,7 +86,7 @@ function ew_show_beers() {
         $output .= '</select>';
 
         if ( is_user_logged_in() ) {
-            if ( !isset($_GET['sort']) || $_GET['sort'] != 'all' )
+            if ( !isset($_GET['sort']) || $_GET['sort'] != 'all' ) {
                 $output .= '<a href="' . get_the_permalink() . '?sort=all">';
             } else {
                 $output .= '<a href="' . get_the_permalink() . '?sort=soldout">';
