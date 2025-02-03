@@ -86,6 +86,13 @@ function ew_show_beers() {
         $output .= '</select>';
 
         if ( is_user_logged_in() ) {
+            if ( !isset($_GET['sort']) || $_GET['sort'] != 'all' )
+                $output .= '<a href="' . get_the_permalink() . '?sort=all">';
+            } else {
+                $output .= '<a href="' . get_the_permalink() . '?sort=soldout">';
+            }
+
+            /*
             $output .= '<select name="sort" id="ew-filter-type-soldout" onchange="this.form.submit()">';
 
             $output .= '<option value="all" disabled selected>Sorter</option>';
@@ -93,6 +100,7 @@ function ew_show_beers() {
             $output .= '<option value="soldout">Udsolgte</option>';
     
             $output .= '</select>';
+            */
         }
 
         $output .= '</form>';
