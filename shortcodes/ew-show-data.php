@@ -101,3 +101,16 @@ function ew_cf_inv () {
 }
 
 add_shortcode( 'ew_single_inv', 'ew_cf_inv' );
+
+// READ MORE
+function ew_sc_read_more() {
+    $ew_read_more = '';
+
+    if ( get_field('laes_mere') ) {
+        $ew_read_more = get_field('laes_mere');
+    }
+
+    return $ew_read_more;
+}
+
+add_shortcode( 'ew_read_more', 'ew_sc_read_more' );

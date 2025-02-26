@@ -83,6 +83,16 @@ function ew_show_beers() {
 
         $output .= '</select>';
 
+        $output .= '</select>';
+
+        if ( is_user_logged_in() ) {
+            if ( !isset($_GET['sort']) || $_GET['sort'] == 'all' ) {
+                $output .= '<a href="' . get_the_permalink() . '?sort=soldout">Vis udsolgte</a>';
+            } else {
+                $output .= '<a href="' . get_the_permalink() . '?sort=all">Vis alle</a>';
+            }
+        }
+
         $output .= '</form>';
 
     $args = array(
@@ -95,6 +105,15 @@ function ew_show_beers() {
         'meta_key' => 'ew_sold_out',
         'meta_value' => false
     );
+    
+    if ( is_user_logged_in() ) {
+        if ( isset($_GET['sort']) && $_GET['sort'] != 'all' ) {
+            $args['meta_value'] = true;
+        } else {
+            unset($args['meta_key']);
+            unset($args['meta_value']);
+        }
+    }
 
     // FILTER BEER TYPE IN WP_QUERY
     if( isset( $_GET['beer-type'] ) && $_GET['beer-type'] != 'all' ) {
@@ -143,9 +162,18 @@ function ew_show_beers() {
             $output .= '<a href="' . get_the_permalink() . '">';
 
             if ( has_post_thumbnail( ) ) {
-                $output .= get_the_post_thumbnail( $post, 'small');
+                //$output .= get_the_post_thumbnail( $post, 'small');
+                $output .= '<img src="' . get_the_post_thumbnail_url($post, 'small') . '" class="zoooom">';
             } else {
                 $output .= '<img src="' . plugin_dir_url( __FILE__ ) . '../assets/bogholderiet-placeholder-beer.png?new2" class="ew-no-img">';
+            }
+
+            if ( get_field( 'ew_sold_out' ) ) {
+                $output .= '<div class="ew-beer-sold-out">';
+
+                $output .= '<h1>UDSOLGT</h1>';
+
+                $output .= '</div>';
             }
 
             $output .= '</a>';
@@ -156,9 +184,10 @@ function ew_show_beers() {
             $beer_country = get_the_terms(get_the_ID(), 'beer_country');
             
             if( isset( $beer_country ) ) {
-                $output .= '<p>Land: ' . $beer_country[0]->name . '<br>';
+                if (isset($beer_country[0])) {
+                    $output .= '<p>Land: ' . $beer_country[0]->name . '<br>';
+                }
             }
-            
 
             // OUTPUT BEER TYPE FROM CAT
             $beer_type = get_the_terms(get_the_ID(), 'category');
@@ -170,7 +199,7 @@ function ew_show_beers() {
             } elseif ( isset( $beer_type[0]->name ) ) {
                 $beer_type_string = $beer_type[0]->name;
             }
-
+            
             $output .= 'Type: ' . $beer_type_string . '<br>';
 
             $output .= 'Alkoholstyrke: ' . get_field( 'alkohol' ) . '&percnt;<br>';

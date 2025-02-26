@@ -41,6 +41,7 @@
 }
 .ew-beer {
     background-color: #410105;
+    position: relative;
     padding: 10px;
 }
 .ew-beer img {
@@ -71,4 +72,45 @@ img.ew-no-img {
 }
 .ew-beer-filter select:focus {
     outline: none;
+}
+
+.ew-beer-sold-out {
+    position: absolute;
+    top: 0;
+    background-color: red;
+    text-align: center;
+    width: calc(100% - 20px);
+    z-index: 1000; /* wp image zoom sets zindex to 999 which would hide this */
+}
+
+.ew-beer-sold-out h1 {
+    position: relative;
+    padding: 0.25em 0;
+    margin: 0;
+}
+
+.ew-beer-status {
+    width: auto;
+    padding: 10px;
+}
+
+.ew-beer-status.soldout {
+    background-color: red;
+    color: #fff;
+}
+
+.ew-beer-status.instock {
+    background-color: limegreen;
+    color: #fff;
+}
+
+.ew-beer-button {
+    background-color: lightgrey;
+    color: #333;
+    padding: 10px;
+    margin-left: 15px;
+}
+
+.zoomWindow {
+    background-color: #410105 !important;
 }
